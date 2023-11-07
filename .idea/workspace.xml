@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e8c3a248-fe70-4fcb-a2ec-3441fbcc781a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/follow_the_link.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/follow_the_link.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/section_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/section_constructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_enter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_enter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_error_password_by_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_error_password_by_registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_log_out_inpersonal_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_log_out_inpersonal_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_successful_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_successful_registration.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2XrPk3bnkVDwEzK03RIgwUP6Ii1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "ignore_missing_gitignore": "true",
+    "last_opened_file_path": "C:/yandex-prac/github/qa_paython_sprint_5"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python tests.Python tests for section_constructor.test_go_to_bread">
+    <configuration name="Python tests for section_constructor.test_go_to_bread" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa_paython_sprint_5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;section_constructor.test_go_to_bread&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_enter.test_enter_button_on_main_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa_paython_sprint_5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_enter.test_enter_button_on_main_list&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_enter.test_enter_button_on_personal_account" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa_paython_sprint_5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_enter.test_enter_button_on_personal_account&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_log_out_inpersonal_account.test_quit_in_personal_account" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa_paython_sprint_5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_log_out_inpersonal_account.test_quit_in_personal_account&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_successful_registration.test_successful_registration" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa_paython_sprint_5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_successful_registration.test_successful_registration&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for section_constructor.test_go_to_bread" />
+        <item itemvalue="Python tests.Python tests for test_log_out_inpersonal_account.test_quit_in_personal_account" />
+        <item itemvalue="Python tests.Python tests for test_enter.test_enter_button_on_personal_account" />
+        <item itemvalue="Python tests.Python tests for test_enter.test_enter_button_on_main_list" />
+        <item itemvalue="Python tests.Python tests for test_successful_registration.test_successful_registration" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8c3a248-fe70-4fcb-a2ec-3441fbcc781a" name="Changes" comment="" />
+      <created>1699384364276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699384364276</updated>
+    </task>
+    <servers />
+  </component>
+</project>
