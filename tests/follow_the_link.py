@@ -1,53 +1,57 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from locators import MainPageLocators, HeaderLocators, AuthPageLocators, Personal_Account
+from tests.data import AuthData
 
 
-def test_follow_personal_account(browser, enter_on_main):
-    browser.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click()
-    email = "Andrey_mul_23@yandex.ru"
-    password = "123456"
-    url = "https://stellarburgers.nomoreparties.site/account/profile"
-    enter_on_main(email, password)
-    browser.find_element(By.XPATH, ".//button[text()='Войти']").click()
+def test_follow_personal_account(browser, authorization):
+    """
+    Тест перехода по клику на «Личный кабинет».
+    """
+    browser.find_element(*MainPageLocators.button_enter_account).click()
+    email = AuthData.email_text_auth
+    password = AuthData.pass_text_auth
+    authorization(email, password)
+    browser.find_element(*AuthPageLocators.button_auth_enter).click()
+    browser.find_element(*HeaderLocators.link_personal_account).click()
+    expected = browser.find_element(*Personal_Account.text_profile).text
+    result = "Профиль"
+    assert expected == result
+
+
+def test_follow_in_personal_account_to_designer(browser, authorization):
+    """
+    Тест по клику на «Конструктор».
+    """
+    browser.find_element(*MainPageLocators.button_enter_account).click()
+    email = AuthData.email_text_auth
+    password = AuthData.pass_text_auth
+    authorization(email, password)
+    browser.find_element(*AuthPageLocators.button_auth_enter).click()
     WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Оформить заказ']")))
-    browser.find_element(By.XPATH, ".//p[text()='Личный Кабинет']").click()
+        expected_conditions.visibility_of_element_located(MainPageLocators.button_order))
+    browser.find_element(*HeaderLocators.link_personal_account).click()
     WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/nav/ul/li[1]")))
-
-    assert url == browser.current_url
-
-
-def test_follow_in_personal_account_to_designer(browser, enter_on_main):
-    browser.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click()
-    email = "Andrey_mul_23@yandex.ru"
-    password = "123456"
-    enter_on_main(email, password)
-    browser.find_element(By.XPATH, ".//button[text()='Войти']").click()
-    WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Оформить заказ']")))
-    browser.find_element(By.XPATH, ".//p[text()='Личный Кабинет']").click()
-    WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/nav/ul/li[1]")))
-    browser.find_element(By.XPATH, "/html/body/div/div/header/nav/ul/li[1]/a").click()
-    result = browser.find_element(By.XPATH, "/html/body/div/div/main/section[1]/h1").text
+        expected_conditions.visibility_of_element_located(Personal_Account.text_profile))
+    browser.find_element(*HeaderLocators.button_constructor).click()
+    result = browser.find_element(*MainPageLocators.text_collect_burger).text
 
     assert "Соберите бургер" in result
 
 
-def test_follow_in_personal_account_to_logo(browser, enter_on_main):
-    browser.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click()
-    email = "Andrey_mul_23@yandex.ru"
-    password = "123456"
-    enter_on_main(email, password)
-    browser.find_element(By.XPATH, ".//button[text()='Войти']").click()
+def test_follow_in_personal_account_to_logo(browser, authorization):
+    """
+    Тест по клику на логотип Stellar Burgers.
+    """
+    browser.find_element(*MainPageLocators.button_enter_account).click()
+    email = AuthData.email_text_auth
+    password = AuthData.pass_text_auth
+    authorization(email, password)
+    browser.find_element(*AuthPageLocators.button_auth_enter).click()
     WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Оформить заказ']")))
-    browser.find_element(By.XPATH, ".//p[text()='Личный Кабинет']").click()
-    WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/nav/ul/li[1]")))
-    browser.find_element(By.XPATH, "/html/body/div/div/header/nav/div/a").click()
-    result = browser.find_element(By.XPATH, "/html/body/div/div/main/section[1]/h1").text
+        expected_conditions.visibility_of_element_located(MainPageLocators.button_order))
+    browser.find_element(*HeaderLocators.link_personal_account).click()
+    browser.find_element(*HeaderLocators.logo_link).click()
+    result = browser.find_element(*MainPageLocators.text_collect_burger).text
 
     assert "Соберите бургер" in result

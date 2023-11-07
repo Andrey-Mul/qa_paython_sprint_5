@@ -1,26 +1,23 @@
-# Тест для успешной регистрации
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from locators import AuthPageLocators
+from data import RegisterData
 
 
 def test_successful_registration(browser, register_user):
-    name = "Andrey_mul_30"  # для проверки увеличить на 1 цифру
-    email = "Andrey_mul_30@yandex.ru"  # для проверки увеличить на 1 цифру
-    password = "123456"
-    url = "https://stellarburgers.nomoreparties.site/login"
+    """
+    Тест на успешную регистрацию.
+    Поле «Имя» должно быть не пустым;
+    в поле Email введён email в формате логин@домен: например, 123@ya.ru.
+    Минимальный пароль — шесть символов.
+    Перед запуском теста нужно увеличить Имя и логин на еденицу "Andrey_mul_34" -> "Andrey_mul_35"
+    """
+    name = RegisterData.name_text_reg  # для проверки увеличить на 1 цифру
+    email = RegisterData.email_text_reg  # для проверки увеличить на 1 цифру
+    password = RegisterData.pass_text_reg
     register_user(name, email, password)
     WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[2]/a")))
-    assert url == browser.current_url
+        expected_conditions.visibility_of_element_located(AuthPageLocators.button_auth_enter))
+    result = browser.find_element(*AuthPageLocators.button_auth_enter).text
 
-
-def test_error_password_less_6_characters_by_registration(browser, register_user):
-    name = "Andrey_mul_23"
-    email = "Andrey_mul_23@yandex.ru"
-    password = "12345"
-    url = "https://stellarburgers.nomoreparties.site/login"
-    register_user(name, email, password)
-    error_text = browser.find_element(By.XPATH, "/html/body/div/div/main/div/form/fieldset[3]/div/p").text
-    result = "Некорректный пароль"
-    assert result in error_text
+    assert "Войти" in result

@@ -1,12 +1,16 @@
-# Тест для успешной регистрации
-from selenium.webdriver.common.by import By
+from data import RegisterData
+from locators import RegistrationLocators
 
 
 def test_error_password_by_registration(browser, register_user):
-    name = "Andrey_mul_23"
-    email = "Andrey_mul_23@yandex.ru"
-    password = "12345"
+    """
+    Тест ошибку для некорректного пароля.
+    Пароль — менее шести символов.
+    """
+    name = RegisterData.name_text_reg
+    email = RegisterData.email_text_reg
+    password = RegisterData.not_correct_pass
     register_user(name, email, password)
-    error_text = browser.find_element(By.XPATH, "/html/body/div/div/main/div/form/fieldset[3]/div/p").text
+    error_text = browser.find_element(*RegistrationLocators.error_pass_text).text
     result = "Некорректный пароль"
-    assert result in error_text
+    assert result == error_text

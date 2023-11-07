@@ -1,22 +1,25 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from locators import MainPageLocators, AuthPageLocators, HeaderLocators, Personal_Account
+from data import AuthData
 
 
-def test_quit_in_personal_account(browser, enter_on_main):
-    browser.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click()
-    email = "Andrey_mul_23@yandex.ru"
-    password = "123456"
-    url = "https://stellarburgers.nomoreparties.site/login"
-    enter_on_main(email, password)
-    browser.find_element(By.XPATH, ".//button[text()='Войти']").click()
+def test_quit_in_personal_account(browser, authorization):
+    """
+    Тест выхода по кнопке «Выйти» в личном кабинете.
+    """
+    browser.find_element(*MainPageLocators.button_enter_account).click()
+    email = AuthData.email_text_auth
+    password = AuthData.pass_text_auth
+    authorization(email, password)
+    browser.find_element(*AuthPageLocators.button_auth_enter).click()
     WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Оформить заказ']")))
-    browser.find_element(By.XPATH, ".//p[text()='Личный Кабинет']").click()
+        expected_conditions.visibility_of_element_located(MainPageLocators.button_order))
+    browser.find_element(*HeaderLocators.link_personal_account).click()
     WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/nav/ul/li[1]")))
-    browser.find_element(By.XPATH, "//button[text()='Выход']").click()
-    WebDriverWait(browser, 3).until(
-        expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[1]/a")))
+        expected_conditions.visibility_of_element_located(Personal_Account.text_profile))
+    browser.find_element(*Personal_Account.button_exit_per_acc).click()
+    browser.find_element(*HeaderLocators.link_personal_account).click()
+    result = browser.find_element(*AuthPageLocators.button_auth_enter).text
 
-    assert url == browser.current_url
+    assert "Войти" in result
